@@ -2,7 +2,7 @@ ARG ELIXIR_VERSION=1.11.3
 
 FROM elixir:${ELIXIR_VERSION}-alpine AS elixir
 
-FROM rust:alpine3.11 AS gleam
+FROM rust:alpine3.13 AS gleam-builder
 
 ARG GLEAM_VERSION=0.13.2
 
@@ -38,7 +38,7 @@ USER root
 COPY --from=elixir /usr/local/lib/erlang /usr/local/lib/erlang
 COPY --from=elixir /usr/local/lib/elixir /usr/local/lib/elixir
 COPY --from=elixir /usr/local/bin /usr/local/bin
-COPY --from=gleam /usr/local/cargo/bin/gleam /usr/local/bin/gleam
+COPY --from=gleam-builder /usr/local/cargo/bin/gleam /usr/local/bin/gleam
 
 # Install Alpine packages (NPM)
 RUN apk update && \
