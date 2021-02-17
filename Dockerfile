@@ -20,7 +20,7 @@ RUN git clone https://github.com/gleam-lang/gleam.git --branch v${GLEAM_VERSION}
   cd gleam &&\
   make install
 
-FROM papereira/devcontainer-base:alpine
+FROM papereira/devcontainer-base:0.2.0-alpine
 ARG VERSION=
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -46,7 +46,6 @@ RUN apk update && \
   make \
   g++ \
   wget \
-  curl \
   inotify-tools && \
   rm -rf /var/cache/apk/*
 
