@@ -25,7 +25,7 @@ This is a list of the build arguments used and their default values:
 
 | Build Argument | default value |
 | -------------- | ------------- |
-| GLEAM_VERSION | 0.13.2 |
+| GLEAM_VERSION | 0.14.0 |
 | ELIXIR_VERSION | 1.11.3 |
 | USERNAME | vscode |
 | USER_UID | 1000 |
