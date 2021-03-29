@@ -4,7 +4,7 @@ FROM elixir:${ELIXIR_VERSION}-alpine AS elixir
 
 FROM rust:alpine3.13 AS gleam-builder
 
-ARG GLEAM_VERSION=0.14.3
+ARG GLEAM_VERSION=0.14.4
 
 RUN apk update && \
   apk --no-cache --update --progress add \
